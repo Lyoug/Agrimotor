@@ -2,41 +2,16 @@
 
 A script to help study the rhythms of the song [Agrimotor by Fredrik Thordendal](https://www.youtube.com/watch?v=c8badRqKgxA).
 
-Some [unusual unicode characters](https://en.wikipedia.org/wiki/Box-drawing_character) are used:
+This script generates 3 text files, detailed below (all three are available in this repository).
 
-| Character | Used as                                             |
-| :--------:|:--------------------------------------------------- |
-| ╺         | beam start (rest)                                   |
-| ┍         | beam start (note)                                   |
-| ━         | beam middle (rest)                                  |
-| ┯         | beam middle (note)                                  |
-| ╸         | beam end (rest)                                     |
-| ┑         | beam end (note) (also used as an 8th note rest)     |
-| ╵         | hamp                                                |
-| │         | bar line                                            |
-
-
-This script generates 3 text files listed below (all three are available in this repository).
-
-## Text music sheet
-
-The first generated file (Agrimotor_music_sheet.txt) contains the whole song’s rhythm as "sheet music" in 12/8. Something like:
-```
-  │ ┍┯╸┍┯┑╺┯╸┍┯┑ │ ╺┯┑┍━┑┍┯╸┍━┑ │ ┍┯╸┍┯┑╺┯┑┍━┑ │ ╺┯┑┍━┑┍┯╸┍━┑ │ ...
-  │ ╵╵┑╵╵╵┑╵┑╵╵╵ │ ┑╵╵╵┑╵╵╵┑╵┑╵ │ ╵╵┑╵╵╵┑╵╵╵┑╵ │ ┑╵╵╵┑╵╵╵┑╵┑╵ │
-```
-which should look like this:
-
-![Text music sheet screenshot](img/text_music_sheet.png)
-
-and is meant to emulate this:
-
-![Acual music sheet](img/actual_music_sheet.png)
+Basics first: this song is in 12/8 (basically 4/4 but with three notes per beat), and is made of a series of riffs. All riffs consist of 8th note attacks (guitar hits) and 8th note rests. I’ll write attacks as `x` and rests as `-`.
 
 
 ## Attacks
 
-The second generated file (Agrimotor_attacks.txt) contains the whole song as a list of attacks and attack groups, to help look for patterns:
+`Agrimotor_attacks.txt`
+
+This file contains the whole song as a basic list of attacks and attack groups, as a reference.
 ```
 xx-xxx-x-xxx-xxx-xxx-x-xxx-xxx-xxx-x-xxx-xxx-x-…
 2 3 1 3 3 3 1 3 3 3 1 3 3 1…
@@ -44,7 +19,9 @@ xx-xxx-x-xxx-xxx-xxx-x-xxx-xxx-xxx-x-xxx-xxx-x-…
 
 ## Patterns
 
-The third generated file (Agrimotor_patterns.txt) is the most interesting. It contains the whole song condensed into a list of base patterns:
+`Agrimotor_patterns.txt`
+
+This file is the most interesting one. It contains the whole song condensed into a list of base patterns:
 ```
 aab aaab aaab aab…
 2 3 3 2…
@@ -54,7 +31,6 @@ Keep reading for explanations, or see [this reddit post](https://old.reddit.com/
 The song is made out of two base patterns:  
 **a** = `xx-x`  
 **b** = `-x`  
-where an `x` is an attack (a guitar hit) and a `-` is a rest. Attacks and rests are all 8th notes.
 
 The song starts like this (bar lines added for readability):  
 `|xx-xxx-x-xxx|-xxx-xxx-x-x|xx-xxx-xxx-x|-xxx-xxx-x-x|…`
@@ -111,6 +87,37 @@ Without using variant patterns, the outro would be:
 [2:21] **22bb 31bb 31bb 22bb**  
 [2:34] **22bb 31bb 31bb 22bb**  
 Every `2bb` (aka `3'`) comes from a `3` that was split by a rest, and every `1bb` (aka `2'`) comes from a split `2`.
+
+
+## Text music sheet
+
+`Agrimotor_music_sheet.txt`
+
+This file makes use of some [unusual unicode characters](https://en.wikipedia.org/wiki/Box-drawing_character):
+
+| Character | Used as                                             |
+| :--------:|:--------------------------------------------------- |
+| ╺         | beam start (rest)                                   |
+| ┍         | beam start (note)                                   |
+| ━         | beam middle (rest)                                  |
+| ┯         | beam middle (note)                                  |
+| ╸         | beam end (rest)                                     |
+| ┑         | beam end (note) (also used as an 8th note rest)     |
+| ╵         | hamp                                                |
+| │         | bar line                                            |
+
+The file contains the whole song’s rhythm as "sheet music" in 12/8. Something like:
+```
+  │ ┍┯╸┍┯┑╺┯╸┍┯┑ │ ╺┯┑┍━┑┍┯╸┍━┑ │ ┍┯╸┍┯┑╺┯┑┍━┑ │ ╺┯┑┍━┑┍┯╸┍━┑ │ ...
+  │ ╵╵┑╵╵╵┑╵┑╵╵╵ │ ┑╵╵╵┑╵╵╵┑╵┑╵ │ ╵╵┑╵╵╵┑╵╵╵┑╵ │ ┑╵╵╵┑╵╵╵┑╵┑╵ │
+```
+which should look like this:
+
+![Text music sheet screenshot](img/text_music_sheet.png)
+
+and is meant to emulate this:
+
+![Acual music sheet](img/actual_music_sheet.png)
 
 
 ## Generating the files
