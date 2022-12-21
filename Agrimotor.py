@@ -12,10 +12,15 @@ REST = '-'
 
 #============================= Song transcription ==============================
 
-# The key to understanding the song. These two patterns basically generate the
-# whole song.
-BASE_PATTERN_A = ATTACK + ATTACK + REST + ATTACK   # 'xx-x'
-BASE_PATTERN_B = REST + ATTACK                     # '-x'
+
+# The key to understanding the song. These two patterns (short and long)
+# basically generate the whole song.
+SHORT = ATTACK + ATTACK + REST + ATTACK      # 'xx-x'
+TAIL  = REST + ATTACK                        # '-x'
+LONG  = SHORT + TAIL                         # 'xx-x-x'
+
+# Variant pattern to simplify the outro
+LONG_VARIANT = REST + LONG[1:]               # '-x-x-x'
 
 # All possible bar types occuring in the song. A dash means an 8th note rest, a
 # number means a group of 8th notes attacks.
@@ -135,6 +140,7 @@ def position(attack_index, bar_list: list[str], bar_length: int) -> tuple[int, i
 
 # Return a pair of strings that represent the specified bars.
 # See to_attacks and to_patterns below for details.
+# This is the "main" function that does all the heavy lifting.
 def _process(bar_list: list[str], chunk_size: int, condense: bool, bar_length: int = 12):
     attack_text = []
     pattern_text = []
@@ -155,14 +161,16 @@ def _process(bar_list: list[str], chunk_size: int, condense: bool, bar_length: i
         grouped_bars = ' '.join(aggregate(chunk_bars, bar_length))
 
         # Process patterns
-        pattern_bars = binary_bars.replace(BASE_PATTERN_A, 'a').replace(BASE_PATTERN_B, 'b ')
+        # The order of replacements is important
+        pattern_bars = binary_bars.replace(SHORT, "s").replace(TAIL, "t")
+        pattern_bars = pattern_bars.replace("ttt", "L' ").replace("st", "L ")
         condensed_pattern_bars = pattern_bars
-        # 6 is the longest streak of base pattern a in the song.
+        # 5 is the longest streak of base pattern s in the song.
         # Iterate in reverse because we need to replace longer patterns first.
-        for n_a in range(6, 0, -1):
+        for n_s in range(5, -1, -1):
             condensed_pattern_bars = condensed_pattern_bars.replace(
-                n_a * 'a' + 'b',
-                str(n_a)
+                n_s * 's' + 'L',
+                str(n_s + 1)
             )
 
         # Add the line for the current chunk to both texts
@@ -201,29 +209,29 @@ def _process(bar_list: list[str], chunk_size: int, condense: bool, bar_length: i
 def to_attacks(bar_list: list[str], chunk_size: int, condense: bool, bar_length: int):
     return _process(bar_list, chunk_size, condense, bar_length)[0]
 
-# Look for base patterns a ('xx-x') and b ('-x') in the given list of bars.
-# Return a string containing the sequence of base patterns (and any remaining
-# attacks) that represents the list of bars, divided into chunks of the
-# specified size.
-# If condense is set to True, sequences 'ab', 'aab', 'aaab' (and so on) are
-# replaced by '1', '2', '3' (and so on).
+# Look for base patterns s ('xx-x'), t ('-x') and L ('xx-x-x') in the given list
+# of bars. Return a string containing the sequence of base patterns (and any
+# remaining attacks) that represents the list of bars, divided into chunks of
+# the specified size.
+# If condense is set to True, sequences 'L', 'sL', 'ssL', 'sssL' (and so on) are
+# replaced by '1', '2', '3', '4' (and so on).
 #
 # Example: with ["2-3-3-1", "-3-3-3", "-3-3-3", "-1-3-1-3"] as the bar list,
 # the result can be:
 #
 # - with a chunk size of 2, condense set to False:
-#   "bars 01-02: aaab aaxx
-#    bars 03-04: b aaab ab xx"
+#   "bars 01-02: ssLssxx
+#    bars 03-04: tssLLxx"
 # 
 # - with a chunk size of 2, condense set to True:
-#   "bars 01-02: 3 aaxx
-#    bars 03-04: b 3 1 xx"
+#   "bars 01-02: 3ssxx
+#    bars 03-04: t31xx"
 #
 # - with a chunk size of 4, condense set to False:
-#   "aaab aaaaaab ab xx"
+#   "ssLsssssLLxx"
 #
 # - with a chunk size of 4, condense set to True:
-#   "3 6 1 xx"
+#   "361xx"
 def to_patterns(bar_list: list[str], chunk_size: int, condense: bool):
     return _process(bar_list, chunk_size, condense)[1]
 
@@ -295,13 +303,18 @@ def detail_patterns(bar_list: list[str], chunk_sizes: list[int], title: str):
     text = []
 
     # General information about base patterns
-    text.append(f"Base patterns, where '{ATTACK}' is a note and '{REST}' is a rest:")
-    text.append(f"a: '{BASE_PATTERN_A}'")
-    text.append(f"b: '{BASE_PATTERN_B}'")
+    text.append(f"Base patterns, where {ATTACK} is a note and {REST} is a rest:")
+    text.append(f"s: {SHORT}")
+    text.append(f"L: {LONG}")
     text.append("Longer, condensed patterns:")
     for i in range(1, 5):
-        text.append(f"{i}: {'a' * i + 'b'} ({BASE_PATTERN_A * i + BASE_PATTERN_B})")
-    text.append("...\n")
+        text.append(f"{i}: {'s' * (i-1)}L ({SHORT * (i-1) + LONG})")
+    text.append("...")
+    text.append("Variant patterns:")
+    text.append(f"L': {LONG_VARIANT}")
+    for i in range(2, 4):
+        text.append(f"{i}': {'s' * (i-1)}L' ({SHORT * (i-1) + LONG_VARIANT})")
+    text.append("\n")
 
     # Whole list of bars
     for condensed in (False, True):

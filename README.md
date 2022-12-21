@@ -23,38 +23,38 @@ xx-xxx-x-xxx-xxx-xxx-x-xxx-xxx-xxx-x-xxx-xxx-x-…
 
 This file is the most interesting one. It contains the whole song condensed into a list of base patterns:
 ```
-aab aaab aaab aab…
+sL ssL ssL sL…
 2 3 3 2…
 ```
-Keep reading for explanations, or see [this reddit post](https://old.reddit.com/r/Meshuggah/comments/zq7ogv/agrimotor_patterns_cracked/) for even more detail.
+Keep reading for explanations. (You can also check out [this reddit post](https://old.reddit.com/r/Meshuggah/comments/zq7ogv/agrimotor_patterns_cracked/) for even more detail, but it’s become obsolete).
 
 The song is made out of two base patterns:  
-**a** = `xx-x`  
-**b** = `-x`  
+**s** = `xx-x` (as in short)  
+**L** = `xx-x-x` (as in Long)  
 
 The song starts like this (bar lines added for readability):  
 `|xx-xxx-x-xxx|-xxx-xxx-x-x|xx-xxx-xxx-x|-xxx-xxx-x-x|…`
 
-If we rewrite this in terms of the two base patterns we get `aab aaab aaab aab…`:  
+If we rewrite this in terms of the two base patterns we get `sL ssL ssL sL…`:  
 `|xx-xxx-x-xxx|-xxx-xxx-x-x|xx-xxx-xxx-x|-xxx-xxx-x-x|…`  
-`|a...a...b.a.|..a...a...b.|a...a...a...|b.a...a...b.|…`
+`|s...L.....s.|..s...L.....|s...s...L...|..s...L.....|…`
 
-The song keeps going with a mix of several `a`s then a `b`. It seems natural to define longer patterns:  
-**1** = `ab` = `xx-x-x`  
-**2** = `aab` = `xx-xxx-x-x`  
-**3** = `aaab` = `xx-xxx-xxx-x-x`  
-**4** = `aaaab` = `xx-xxx-xxx-xxx-x-x`  
+The song keeps going with a mix of several `s`s then an `L`. It seems natural to define longer patterns:  
+**1** = `L` = `xx-x-x`  
+**2** = `sL` = `xx-xxx-x-x`  
+**3** = `ssL` = `xx-xxx-xxx-x-x`  
+**4** = `sssL` = `xx-xxx-xxx-xxx-x-x`  
 ...
 
 And with these longer patterns, the start of the song reduces to only **23 32**:  
 `|xx-xxx-x-xxx|-xxx-xxx-x-x|xx-xxx-xxx-x|-xxx-xxx-x-x|…`  
-`|a...a...b.a.|..a...a...b.|a...a...a...|b.a...a...b.|…`  
+`|s...L.....s.|..s...L.....|s...s...L...|..s...L.....|…`
 `|2.........3.|............|3...........|..2.........|…`
 
 Last, let’s just define a few variant patterns that will make the outro simpler:  
-**a'** = `-x-x` = `a` but starting with a rest (= `bb`)  
-**2'** = `aa'b` (= `abbb` = `1bb`)  
-**3'** = `aaa'b` (= `aabbb` = `2bb`)
+**L'** = `-x-x-x` = `L` but starting with a rest  
+**2'** = `sL'`  
+**3'** = `ssL'`
 
 ---
 
@@ -77,16 +77,11 @@ Then we can rewrite the whole song in terms of the longer patterns. Broken down 
 
 (\*2) The outro is actually just the same as the intro (`23 32 32 23`), but with rests on beat 3 of every bar:  
 `|2.........3.|...... . .....|3...........|..2... . .....|…`  
-`|a...a...b.a.|..a... a ...b.|a...a...a...|b.a... a ...b.|…`  
+`|s...L.....s.|..s... L .....|s...s...L...|..s... L .....|…`  
 `|xx-xxx-x-xxx|-xxx-x X x-x-x|xx-xxx-xxx-x|-xxx-x X x-x-x|…` ← Intro  
 `|xx-xxx-x-xxx|-xxx-x - x-x-x|xx-xxx-xxx-x|-xxx-x - x-x-x|…` ← Outro  
-`|a...a...b.a.|..a... b .b.b.|a...a...a...|b.a... b .b.b.|…`  
+`|s...L.....s.|..s... L'.....|s...s...L...|..s... L'.....|…`  
 `|2.........3'|...... . .....|3...........|..2'.. . .....|…`
-
-Without using variant patterns, the outro would be:  
-[2:21] **22bb 31bb 31bb 22bb**  
-[2:34] **22bb 31bb 31bb 22bb**  
-Every `2bb` (aka `3'`) comes from a `3` that was split by a rest, and every `1bb` (aka `2'`) comes from a split `2`.
 
 
 ## Text music sheet

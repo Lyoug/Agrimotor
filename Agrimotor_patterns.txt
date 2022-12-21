@@ -1,62 +1,67 @@
 Agrimotor - Patterns
 ====================
 
-Base patterns, where 'x' is a note and '-' is a rest:
-a: 'xx-x'
-b: '-x'
+Base patterns, where x is a note and - is a rest:
+s: xx-x
+L: xx-x-x
 Longer, condensed patterns:
-1: ab (xx-x-x)
-2: aab (xx-xxx-x-x)
-3: aaab (xx-xxx-xxx-x-x)
-4: aaaab (xx-xxx-xxx-xxx-x-x)
+1: L (xx-x-x)
+2: sL (xx-xxx-x-x)
+3: ssL (xx-xxx-xxx-x-x)
+4: sssL (xx-xxx-xxx-xxx-x-x)
 ...
+Variant patterns:
+L': -x-x-x
+2': sL' (xx-x-x-x-x)
+3': ssL' (xx-xxx-x-x-x-x)
+
 
 Whole song, as base patterns:
-aab aaab aaab aab aaab aab aab aaab ab aaab ab aaab ab aaab ab aaab ab aab ab aab aaaab ab aab aaaab ab aab aaaab ab aab aaaab ab aab aaaab ab aab axxaab aaab aaab aab aaab aab aab aaab aaab aab aab aaab aaab aaaaaab ab xxab ab aab aaaab aab aaaab ab aab aaaab ab aab aaaab aab aaaab ab aab aaaaab aaab aaab aab aaab aab aab aaab aaab aab aab aaab aaab aaaaaab ab xxaab aab b b aaab ab b b aaab ab b b aab aab b b aab aab b b aaab ab b b aaab ab b b aab aab b b 
+sL ssL ssL sL ssL sL sL ssL L ssL L ssL L ssL L ssL L sL L sL sssL L sL sssL L sL sssL L sL sssL L sL sssL L sL sxxsL ssL ssL sL ssL sL sL ssL ssL sL sL ssL ssL sssssL L xxL L sL sssL sL sssL L sL sssL L sL sssL sL sssL L sL ssssL ssL ssL sL ssL sL sL ssL ssL sL sL ssL ssL sssssL L xxsL ssL' ssL sL' ssL sL' sL ssL' sL ssL' ssL sL' ssL sL' sL ssL' 
 
 Whole song, as condensed patterns:
-2 3 3 2 3 2 2 3 1 3 1 3 1 3 1 3 1 2 1 2 4 1 2 4 1 2 4 1 2 4 1 2 4 1 2 axx2 3 3 2 3 2 2 3 3 2 2 3 3 6 1 xx1 1 2 4 2 4 1 2 4 1 2 4 2 4 1 2 5 3 3 2 3 2 2 3 3 2 2 3 3 6 1 xx2 2 b b 3 1 b b 3 1 b b 2 2 b b 2 2 b b 3 1 b b 3 1 b b 2 2 b b 
+2 3 3 2 3 2 2 3 1 3 1 3 1 3 1 3 1 2 1 2 4 1 2 4 1 2 4 1 2 4 1 2 4 1 2 sxx2 3 3 2 3 2 2 3 3 2 2 3 3 6 1 xx1 1 2 4 2 4 1 2 4 1 2 4 2 4 1 2 5 3 3 2 3 2 2 3 3 2 2 3 3 6 1 xx2 3' 3 2' 3 2' 2 3' 2 3' 3 2' 3 2' 2 3' 
 
 In chunks of 8 bars, as base patterns:
-bars 01-08: aab aaab aaab aab aaab aab aab aaab 
-bars 09-16: ab aaab ab aaab ab aaab ab aaab ab aab 
-bars 17-24: ab aab aaaab ab aab aaaab ab aab aaa
-bars 25-32: ab ab aab aaaab ab aab aaaab ab aab axx
-bars 33-40: aab aaab aaab aab aaab aab aab aaab 
-bars 41-48: aaab aab aab aaab aaab aaaaaab ab xx
-bars 49-56: ab ab aab aaaab aab aaaab ab aab aaa
-bars 57-64: ab ab aab aaaab aab aaaab ab aab aaa
-bars 65-72: aab aaab aaab aab aaab aab aab aaab 
-bars 73-80: aaab aab aab aaab aaab aaaaaab ab xx
-bars 81-88: aab aab b b aaab ab b b aaab ab b b aab aab b b 
-bars 89-96: aab aab b b aaab ab b b aaab ab b b aab aab b b 
+bars 01-08: sL ssL ssL sL ssL sL sL ssL 
+bars 09-16: L ssL L ssL L ssL L ssL L sL 
+bars 17-24: L sL sssL L sL sssL L sL sss
+bars 25-32: L L sL sssL L sL sssL L sL sxx
+bars 33-40: sL ssL ssL sL ssL sL sL ssL 
+bars 41-48: ssL sL sL ssL ssL sssssL L xx
+bars 49-56: L L sL sssL sL sssL L sL sss
+bars 57-64: L L sL sssL sL sssL L sL sss
+bars 65-72: sL ssL ssL sL ssL sL sL ssL 
+bars 73-80: ssL sL sL ssL ssL sssssL L xx
+bars 81-88: sL ssL' ssL sL' ssL sL' sL ssL' 
+bars 89-96: sL ssL' ssL sL' ssL sL' sL ssL' 
 
 In chunks of 8 bars, as condensed patterns:
 bars 01-08: 2 3 3 2 3 2 2 3 
 bars 09-16: 1 3 1 3 1 3 1 3 1 2 
-bars 17-24: 1 2 4 1 2 4 1 2 aaa
-bars 25-32: 1 1 2 4 1 2 4 1 2 axx
+bars 17-24: 1 2 4 1 2 4 1 2 sss
+bars 25-32: 1 1 2 4 1 2 4 1 2 sxx
 bars 33-40: 2 3 3 2 3 2 2 3 
 bars 41-48: 3 2 2 3 3 6 1 xx
-bars 49-56: 1 1 2 4 2 4 1 2 aaa
-bars 57-64: 1 1 2 4 2 4 1 2 aaa
+bars 49-56: 1 1 2 4 2 4 1 2 sss
+bars 57-64: 1 1 2 4 2 4 1 2 sss
 bars 65-72: 2 3 3 2 3 2 2 3 
 bars 73-80: 3 2 2 3 3 6 1 xx
-bars 81-88: 2 2 b b 3 1 b b 3 1 b b 2 2 b b 
-bars 89-96: 2 2 b b 3 1 b b 3 1 b b 2 2 b b 
+bars 81-88: 2 3' 3 2' 3 2' 2 3' 
+bars 89-96: 2 3' 3 2' 3 2' 2 3' 
 
 In chunks of 16 bars, as base patterns:
-bars 01-16: aab aaab aaab aab aaab aab aab aaab ab aaab ab aaab ab aaab ab aaab ab aab 
-bars 17-32: ab aab aaaab ab aab aaaab ab aab aaaab ab aab aaaab ab aab aaaab ab aab axx
-bars 33-48: aab aaab aaab aab aaab aab aab aaab aaab aab aab aaab aaab aaaaaab ab xx
-bars 49-64: ab ab aab aaaab aab aaaab ab aab aaaab ab aab aaaab aab aaaab ab aab aaa
-bars 65-80: aab aaab aaab aab aaab aab aab aaab aaab aab aab aaab aaab aaaaaab ab xx
-bars 81-96: aab aab b b aaab ab b b aaab ab b b aab aab b b aab aab b b aaab ab b b aaab ab b b aab aab b b 
+bars 01-16: sL ssL ssL sL ssL sL sL ssL L ssL L ssL L ssL L ssL L sL 
+bars 17-32: L sL sssL L sL sssL L sL sssL L sL sssL L sL sssL L sL sxx
+bars 33-48: sL ssL ssL sL ssL sL sL ssL ssL sL sL ssL ssL sssssL L xx
+bars 49-64: L L sL sssL sL sssL L sL sssL L sL sssL sL sssL L sL sss
+bars 65-80: sL ssL ssL sL ssL sL sL ssL ssL sL sL ssL ssL sssssL L xx
+bars 81-96: sL ssL' ssL sL' ssL sL' sL ssL' sL ssL' ssL sL' ssL sL' sL ssL' 
 
 In chunks of 16 bars, as condensed patterns:
 bars 01-16: 2 3 3 2 3 2 2 3 1 3 1 3 1 3 1 3 1 2 
-bars 17-32: 1 2 4 1 2 4 1 2 4 1 2 4 1 2 4 1 2 axx
+bars 17-32: 1 2 4 1 2 4 1 2 4 1 2 4 1 2 4 1 2 sxx
 bars 33-48: 2 3 3 2 3 2 2 3 3 2 2 3 3 6 1 xx
-bars 49-64: 1 1 2 4 2 4 1 2 4 1 2 4 2 4 1 2 aaa
+bars 49-64: 1 1 2 4 2 4 1 2 4 1 2 4 2 4 1 2 sss
 bars 65-80: 2 3 3 2 3 2 2 3 3 2 2 3 3 6 1 xx
-bars 81-96: 2 2 b b 3 1 b b 3 1 b b 2 2 b b 2 2 b b 3 1 b b 3 1 b b 2 2 b b 
+bars 81-96: 2 3' 3 2' 3 2' 2 3' 2 3' 3 2' 3 2' 2 3' 
