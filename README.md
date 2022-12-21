@@ -59,25 +59,30 @@ where an `x` is an attack / a hit and a `-` is a rest. Both are 8th notes.
 The song starts like this (bar lines added for readability):  
 `|xx-xxx-x-xxx|-xxx-xxx-x-x|xx-xxx-xxx-x|-xxx-xxx-x-x|…`
 
-If we rewrite it in terms of the two base patterns we get `aab aaab aaab aab…`:  
+If we rewrite this in terms of the two base patterns we get `aab aaab aaab aab…`:  
 `|xx-xxx-x-xxx|-xxx-xxx-x-x|xx-xxx-xxx-x|-xxx-xxx-x-x|…`  
 `|a...a...b.a.|..a...a...b.|a...a...a...|b.a...a...b.|…`
 
-The song keeps going like this, so it seems natural to define longer patterns:  
+The song keeps going with a mix of `a`s and `b`s. It seems natural to define longer patterns:  
 **1** = `ab` = `xx-x-x`  
 **2** = `aab` = `xx-xxx-x-x`  
 **3** = `aaab` = `xx-xxx-xxx-x-x`  
 **4** = `aaaab` = `xx-xxx-xxx-xxx-x-x`  
 ...
 
-And with these longer patterns, the start of the song reduces to **23 32**:  
+And with these longer patterns, the start of the song reduces to only **23 32**:  
 `|xx-xxx-x-xxx|-xxx-xxx-x-x|xx-xxx-xxx-x|-xxx-xxx-x-x|…`  
 `|a...a...b.a.|..a...a...b.|a...a...a...|b.a...a...b.|…`  
 `|2.........3.|............|3...........|..2.........|…`
 
+Last, let’s just define a few variant patterns that will make the outro simpler:  
+**a'** = `-x-x` = `a` but starting with a rest = `bb`  
+**2'** = `aa'b` = `abbb`  
+**3'** = `aaa'b` = `aabbb`
+
 ---
 
-Then we can rewrite the whole song in terms of the longer patterns. Cut in chunks of 8 or 16 bars (with timecodes for reference), we get this rather neat, compressed version of the song that shows the patterns it is made out of:
+Then we can rewrite the whole song in terms of the longer patterns. Broken down into chunks of 8 or 16 bars (with timecodes for reference), we get this rather neat, compressed version of the song that shows the patterns it is made out of:
 
 *Intro*  
 [0:06] **23 32 32 23**  
@@ -93,20 +98,24 @@ Then we can rewrite the whole song in terms of the longer patterns. Cut in chunk
 [1:54] **23 32 32 23**  
 [2:07] **32 23 36 1xx**  
 *Outro*  
-[2:21] **22bb 31bb 31bb 22bb** (\*2)  
-[2:34] **22bb 31bb 31bb 22bb**  
+[2:21] **23' 32' 32' 23'** (\*2)  
+[2:34] **23' 32' 32' 23'**  
 
-(\*1) 12axx and 12aaa are just truncated versions of 124
+(\*1) 12axx and 12aaa are just truncated versions of 124.
 
-(\*2) The outro is actually just the same as the intro (23 32 32 23), but with rests on beat 3 of every bar. Every **2bb** comes from a **3** that was split by a rest (and every **1bb** comes from a split **2**). In basic form:  
-Intro:  
-`|xx-xxx-x-xxx|-xxx-x X x-x-x|xx-xxx-xxx-x|-xxx-x X x-x-x|…`  
-`|a...a...b.a.|..a... a ...b.|a...a...a...|b.a... a ...b.|…`  
+(\*2) The outro is actually just the same as the intro (23 32 32 23), but with rests on beat 3 of every bar:  
 `|2.........3.|...... . .....|3...........|..2... . .....|…`  
-Outro:  
-`|xx-xxx-x-xxx|-xxx-x - x-x-x|xx-xxx-xxx-x|-xxx-x - x-x-x|…`  
+`|a...a...b.a.|..a... a ...b.|a...a...a...|b.a... a ...b.|…`  
+`|xx-xxx-x-xxx|-xxx-x X x-x-x|xx-xxx-xxx-x|-xxx-x X x-x-x|…` <- Intro  
+`|xx-xxx-x-xxx|-xxx-x - x-x-x|xx-xxx-xxx-x|-xxx-x - x-x-x|…` <- Outro  
 `|a...a...b.a.|..a... b .b.b.|a...a...a...|b.a... b .b.b.|…`  
-`|2.........2.|...... . .b.b.|3...........|..1... . .b.b.|…`
+`|2.........3'|...... . .....|3...........|..2'.. . .....|…`
+
+Without using variant patterns, the outro would be:  
+[2:21] **22bb 31bb 31bb 22bb**  
+[2:34] **22bb 31bb 31bb 22bb**  
+Every **2bb** comes from a **3** that was split by a rest (and every **1bb** comes from a split **2**).
+
 
 ## Generating the files
 
