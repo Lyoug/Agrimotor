@@ -64,16 +64,16 @@ Then we can rewrite the whole song in terms of the longer patterns. Broken down 
 |------------------------|----------|-------------------------------------|
 | *Intro*                | 0:06     | **23 32 32 23**                     |
 |                        | 0:20     | **13 13 13 13 12**                  |
-| *Verse 1*              | 0:33     | **124 124 124 124 124 12axx** (\*1) |
+| *Verse 1*              | 0:33     | **124 124 124 124 124 12sxx** (\*1) |
 | *Descending riff \\m/* | 1:00     | **23 32 32 23**                     |
 |                        | 1:13     | **32 23 36 1xx**                    |
-| *Verse 2*              | 1:27     | **1 12424 124 12424 12aaa** (\*1)   |
+| *Verse 2*              | 1:27     | **1 12424 124 12424 12sss** (\*1)   |
 | *Descending riff*      | 1:54     | **23 32 32 23**                     |
 |                        | 2:07     | **32 23 36 1xx**                    |
 | *Outro*                | 2:21     | **23' 32' 32' 23'** (\*2)           |
 |                        | 2:34     | **23' 32' 32' 23'**                 |
 
-(\*1) `12axx` and `12aaa` are just truncated versions of `124` at the end of the 16-bar cycle.
+(\*1) `12sxx` and `12sss` are just truncated versions of `124` at the end of the 16-bar cycle.
 
 (\*2) The outro is actually just the same as the intro (`23 32 32 23`), but with rests on beat 3 of every bar:  
 `|2.........3.|...... . .....|3...........|..2... . .....|…`  
